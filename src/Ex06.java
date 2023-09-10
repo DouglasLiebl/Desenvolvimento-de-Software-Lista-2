@@ -25,6 +25,9 @@ public class Ex06 {
         if (time.isBlank() || time.isEmpty()) throw new Exception();
 
         String[] timeCutter= time.split(":");
+
+        if (Long.parseLong(timeCutter[0]) > 24 || Long.parseLong(timeCutter[1]) > 59) throw new Exception();
+        
         return ((Long.parseLong(timeCutter[0])) * 60) + Long.parseLong(timeCutter[1]);
     }
 
